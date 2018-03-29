@@ -7,6 +7,8 @@ import Search from '../components/shopcart/shopcart.vue'
 import NewsList from '../components/news/newsList.vue'
 import PhotoShare from '../components/photo/photoShare.vue'
 import PhotoDetail from '../components/photo/photoDetail.vue'
+import goodsList from '../components/goods/goodsList.vue'
+import goodsDetail from '../components/goods/goodsDetail.vue'
 Vue.use(Router)
 export default new Router({
   linkActiveClass: 'mui-active',
@@ -50,6 +52,16 @@ export default new Router({
       name: 'photo.share',
       path: '/photo/share',
       component: PhotoShare
+    },
+    {
+      name: 'goods.list',
+      path: '/goods/list',
+      component: goodsList
+    },
+    {
+      name: 'goods.detail',
+      path: '/goods/detail',
+      component: goodsDetail
     }
   ]
 })

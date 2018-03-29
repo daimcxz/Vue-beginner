@@ -7,6 +7,7 @@ import Axios from 'axios'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import '../mui-master/dist/css/mui.css'
+import '../mui-master/dist/js/mui.js'
 import NavBar from './components/common/navbar.vue'
 import VuePreview from 'vue-preview'
 Vue.config.productionTip = false
@@ -17,7 +18,18 @@ Vue.use(Mint)
 Vue.use(VuePreview)
 Vue.component('navBar', NavBar)
 Axios.defaults.baseURL = 'https://easy-mock.com/mock/5aaa4eeeb6dae8304b4e832f/ZGS/'
-
+// 拦截器
+Axios.interceptors.request.use(function (config) {
+  Mint.Indicator.open({
+    text: '加载中...',
+    spinnerType: 'fading-circle'
+  })
+  return config
+})
+Axios.interceptors.response.use(function (config) {
+  Mint.Indicator.close()
+  return config
+})
 Vue.prototype.$axios = Axios
 
 new Vue({

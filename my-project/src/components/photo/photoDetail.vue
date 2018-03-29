@@ -27,10 +27,10 @@
           </div>
         </li>
         <li class="txt-comment">
-          <textarea name="" id="" cols="0" rows="0"></textarea>
+          <textarea v-model="msg"></textarea>
         </li>
         <li>
-         发送
+         <button @click="send">发表</button>
         </li>
         <li class="photo-comment">
           <div>
@@ -56,14 +56,14 @@ export default {
       imgs: [], // 图片
       imgInfo: {}, // 缩略图
       comments: [], // 评论
-      pageindex: 1,
+      msg: ''
     }
   },
   created () {
-    this.getInfo();
+    this.getInfo()
   },
   methods: {
-    getInfo: function() {
+    getInfo: function () {
       console.log(this)
       // 1：获取路由参数
       // 2: 发起请求
@@ -72,15 +72,13 @@ export default {
           console.log(res)
           console.log(res.data.message)
           this.imgs = res.data.message
-
-          if(this.comments.length === 0) {
-            this.comments = res.data.message;
-          }
-          else {
+          if (this.comments.length === 0) {
+            this.comments = res.data.message
+          } else {
             console.log('33333')
             console.log(this.comments)
             console.log(res.data.message)
-            this.comments = this.comments.concat(res.data.message);
+            this.comments = this.comments.concat(res.data.message)
           }
           this.imgInfo = res.data.message[0]
         })
@@ -91,9 +89,23 @@ export default {
     handleClose: () => {
       console.log('1111')
     },
-    addMroe: function() {
-      console.log(2222);
-       this.getInfo();
+    addMroe: function () {
+      console.log(2222)
+      this.getInfo()
+    },
+    // 发表评论
+    send () {
+      this.$axios.get('ZGS_2')
+        .then(res => {
+          console.log(res)
+          this.categorys.unshift({
+            conent: this.msg
+          })
+          this.getInfo()
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }
