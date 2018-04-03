@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    goHerf: function(name) {
+    goHerf: function (name) {
       this.$router.push({
         name: name
       })

@@ -5,6 +5,7 @@ import Membeer from '../components/membeer/membeer.vue'
 import Shopcart from '../components/search/search.vue'
 import Search from '../components/shopcart/shopcart.vue'
 import NewsList from '../components/news/newsList.vue'
+import newsDateli from '../components/news/newsDateli.vue'
 import PhotoShare from '../components/photo/photoShare.vue'
 import PhotoDetail from '../components/photo/photoDetail.vue'
 import goodsList from '../components/goods/goodsList.vue'
@@ -42,6 +43,11 @@ export default new Router({
       name: 'news.list',
       path: '/news/list',
       component: NewsList
+    },
+    {
+      name: 'news.dateli',
+      path: '/news/dateli',
+      component: newsDateli
     },
     {
       name: 'photo.detail',
