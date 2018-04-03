@@ -7,7 +7,7 @@ import Axios from 'axios'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import '../mui-master/dist/css/mui.css'
-import '../mui-master/dist/js/mui.js'
+import '../mui-master/dist/js/mui.min.js'
 import NavBar from './components/common/navbar.vue'
 import VuePreview from 'vue-preview'
 Vue.config.productionTip = false

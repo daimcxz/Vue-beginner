@@ -7,15 +7,15 @@
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
       </div>
-      <div class="mui-tab-item email" @click.prevent="goHerf('email')">
+      <div class="mui-tab-item email" @click.prevent="goHerf('membeer')">
         <span class="mui-icon mui-icon-email"></span>
         <span class="mui-tab-label">消息</span>
       </div>
-      <div class="mui-tab-item contact" @click.prevent="goHerf('contact')">
+      <div class="mui-tab-item contact" @click.prevent="goHerf('search')">
         <span class="mui-icon mui-icon-contact"></span>
         <span class="mui-tab-label">购物</span>
       </div>
-      <div  class="mui-tab-item gear" @click.prevent="goHerf('gear')">
+      <div  class="mui-tab-item gear" @click.prevent="goHerf('shopcart')">
         <span class="mui-icon mui-icon-gear"></span>
         <span class="mui-tab-label">自定义</span>
       </div>
